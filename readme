@@ -1,0 +1,105 @@
+QR Code and Password Generator
+Este projeto é uma aplicação CLI (Command Line Interface) que permite ao usuário gerar um QR Code a partir de um link ou criar uma senha segura. A aplicação utiliza bibliotecas como prompt para interação com o usuário, chalk para estilização das mensagens no terminal, e qrcode-terminal para gerar QR Codes diretamente no terminal.
+
+Funcionalidades
+Gerador de QR Code: Gera um QR Code a partir de um link fornecido pelo usuário, com a opção de ser exibido em tamanho normal ou reduzido no terminal.
+Gerador de Senhas: Gera uma senha aleatória baseada em caracteres permitidos com comprimento configurável através de variáveis de ambiente.
+Tecnologias Utilizadas
+Node.js
+Prompt
+Chalk
+QRCode-Terminal
+Dotenv
+Instalação
+Clone o repositório:
+
+bash
+Copiar código
+git clone https://github.com/seu-usuario/projeto-qrcode-password.git
+cd projeto-qrcode-password
+Instale as dependências:
+
+bash
+Copiar código
+npm install
+Configure as variáveis de ambiente criando um arquivo .env:
+
+bash
+Copiar código
+PASSWORD_LENGTH=12
+Como Usar
+Gerar QR Code
+Execute o comando para iniciar a aplicação:
+
+bash
+Copiar código
+node index.js
+Escolha a opção 1 - QRCODE no prompt:
+
+css
+Copiar código
+escolha a ferramenta (1 - QRCODE ou (2 - PASSWORD)): 1
+Insira o link que deseja gerar o QR Code:
+
+bash
+Copiar código
+digite o link para gerar o qrcode: https://example.com
+Escolha o tipo de QR Code:
+
+css
+Copiar código
+digite o tipo de imagem (1 - NORMAL ou (2 - TERMINAL)): 2
+O QR Code será gerado diretamente no terminal:
+
+python
+Copiar código
+QR Code gerado com sucesso:
+██████████████████████████████
+█ ▄▄▄▄▄ █▀▀▀▀▀▀▀▀▀▀▀█ ▄▄▄▄▄ █
+█ █   █ █ █▀▀▀▀▀▀▀█ █ █   █ █
+█ █▄▄▄█ █ █ █▀▀▀█ █ █ █▄▄▄█ █
+...
+Gerar Senha Aleatória
+Execute a aplicação:
+
+bash
+Copiar código
+node index.js
+Escolha a opção 2 - PASSWORD no prompt:
+
+css
+Copiar código
+escolha a ferramenta (1 - QRCODE ou (2 - PASSWORD)): 2
+A senha será gerada e exibida no terminal:
+
+yaml
+Copiar código
+Sua senha gerada foi:
+aB3dEfgH1jkL
+Estrutura do Projeto
+bash
+Copiar código
+├── prompts
+│   ├── prompt-main.js        # Prompt principal para escolher a ferramenta
+│   ├── prompt-qrcode.js      # Prompt para gerar QR Code
+├── services
+│   ├── qr-code
+│   │   ├── create.js         # Função para criar QR Code
+│   │   ├── handle.js         # Função de manipulação do QR Code
+│   └── password
+│       ├── create.js         # Função para criar senha
+│       ├── handle.js         # Lógica de geração de senha
+├── utils
+│   ├── permitted-characters.js # Função de caracteres permitidos para senha
+├── index.js                  # Arquivo principal da aplicação
+├── .env                      # Arquivo de variáveis de ambiente
+└── package.json              # Dependências e configurações do projeto
+Variáveis de Ambiente
+PASSWORD_LENGTH: Define o comprimento da senha gerada. Por padrão, 12 caracteres.
+Dependências
+prompt: Permite a interação com o usuário através do terminal.
+chalk: Estiliza e colore as saídas no terminal.
+qrcode-terminal: Gera QR Codes diretamente no terminal.
+Licença
+Este projeto está licenciado sob a MIT License. Sinta-se livre para usá-lo e modificá-lo.
+
