@@ -3,7 +3,7 @@ import handle from "./handle.js";
 
 async function createPassword() {
     const password = await handle()
-    console.log(chalk.green(`Sua senha gerada foi: ${password}`));
+    console.log(chalk.green(`Sua senha gerada foi:\n ${password}`));
     
 }
 
