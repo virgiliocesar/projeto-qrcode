@@ -75,26 +75,31 @@ cd projeto-qrcode-password</code></pre>
 
 <h2>Estrutura do Projeto</h2>
 <pre><code>
-├── prompts
-│   ├── prompt-main.js        # Prompt principal para escolher a ferramenta
-│   ├── prompt-qrcode.js      # Prompt para gerar QR Code
-├── services
-│   ├── qr-code
-│   │   ├── create.js         # Função para criar QR Code
-│   │   ├── handle.js         # Função de manipulação do QR Code
-│   └── password
-│       ├── create.js         # Função para criar senha
-│       ├── handle.js         # Lógica de geração de senha
-├── utils
-│   ├── permitted-characters.js # Função de caracteres permitidos para senha
-├── index.js                  # Arquivo principal da aplicação
-├── .env                      # Arquivo de variáveis de ambiente
-└── package.json              # Dependências e configurações do projeto
+├── src
+│   ├── prompts
+│   │   ├── prompt-main.js        # Prompt principal para escolher a ferramenta
+│   │   ├── prompt-qrcode.js      # Prompt para gerar QR Code
+│   ├── services
+│   │   ├── qr-code
+│   │   │   ├── create.js         # Função para criar QR Code
+│   │   │   ├── handle.js         # Função de manipulação do QR Code
+│   │   └── password
+│   │       ├── create.js         # Função para criar senha
+│   │       ├── handle.js         # Lógica de geração de senha
+│   ├── utils
+│   │   ├── permitted-characters.js # Função de caracteres permitidos para senha
+│   ├── index.js                  # Arquivo principal da aplicação
+├── .env                          # Arquivo de variáveis de ambiente
+├── package.json                  # Dependências e configurações do projeto
 </code></pre>
 
 <h2>Variáveis de Ambiente</h2>
 <ul>
-  <li><code>PASSWORD_LENGTH</code>: Define o comprimento da senha gerada. Por padrão, 12 caracteres.</li>
+  <li><code>UPPERCASE_LETTERS</code>: Se for true, incluirá letras maiúsculas (A-Z) na geração da senha.</li>
+  <li><code>LOWERCASE_LETTERS</code>: Se for true, incluirá letras maiúsculas (A-Z) na geração da senha.</li>
+  <li><code>NUMBERS</code>: Se for true, incluirá números (0-9) na senha.</li>
+  <li><code>SPECIAL_CHARACTERS</code>: Se for true, incluirá caracteres especiais (como @, #, $, etc.) na senha.</li>
+  <li><code>PASSWORD_LENGTH</code>: Define o comprimento da senha gerada.</li>
 </ul>
 
 <h2>Dependências</h2>
